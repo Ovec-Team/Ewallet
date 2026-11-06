@@ -1,0 +1,6 @@
+# Ewallet - Requirements
+# This project uses only Python standard library
+# No external dependencies needed
+
+# For testing (optional)
+pytest==8.3.2
