@@ -1,2 +1,0 @@
-# Ewallet
-Class assignment
