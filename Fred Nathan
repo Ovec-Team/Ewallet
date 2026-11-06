@@ -1,0 +1,43 @@
+class Ewallet:
+    def __init__(self, owner_name):
+        self.owner_name = owner_name
+        self.balance = 0.0
+        self.history = [] # On ajoute une liste pour garder l'historique
+
+    def check_balance(self):
+        print(f"Wallet for {self.owner_name} | Balance: ${self.balance}")
+
+    # 1. La fonction de dépôt (demandée dans le TODO)
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            self.history.append(f"Dépôt : +${amount}")
+            print(f"Deposited ${amount}. New balance: ${self.balance}")
+        else:
+            print("Le montant du dépôt doit être positif.")
+
+    # 2. TA MODIFICATION : Ajout d'une fonction de retrait
+    def withdraw(self, amount):
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+            self.history.append(f"Retrait : -${amount}")
+            print(f"Withdrew ${amount}. New balance: ${self.balance}")
+        else:
+            print("Fonds insuffisants ou montant invalide.")
+
+    # 3. TA MODIFICATION : Afficher l'historique
+    def show_history(self):
+        print(f"--- HISTORIQUE DES TRANSACTIONS POUR {self.owner_name} ---")
+        if not self.history:
+            print("Aucune transaction enregistrée.")
+        else:
+            for transaction in self.history:
+                print(transaction)
+
+# --- TESTING THE WALLET ---
+if __name__ == "__main__":
+    my_wallet = Ewallet("Nathan") # Mets ton prénom ici
+    my_wallet.check_balance()
+    my_wallet.deposit(50)
+    my_wallet.withdraw(20)
+    my_wallet.show_history()
