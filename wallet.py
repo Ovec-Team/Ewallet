@@ -1,17 +1,17 @@
- class Ewallet:
-    def __init__(self, owner_name):
-        self.owner_name = owner_name
-        self.balance = 0.0
-
+class Ewallet:
+    def__init__(Self, owener_name):
+       self.owner_name = owner_name
+       self.balance = 0.0
     def check_balance(self):
-        print(f"Wallet for {self.owner_name} | Balance: ${self.balance}")
-
-  # ___ TESTING THE WALLET ___
-  if __name__== "__main__":
-      my_wallet = Ewallet("Forchu Shalom")
-      my_wallet.check_balance()
-
-      # TODO for teammates: Add a deposit function below!
- def deposit(self, amount):
-     self.balance += amount
-     print(f"Deposited ${amount}.New balance: ${self.balance}")
+        print(f"wallet for {self.owner_name}| balance:${self.balance}")
+    def deposit(self,amount):
+        if amount <= 0:
+            print("le montant doit etre positif.")
+            return
+        self.balance +=amount
+        print(f"deposited ${amount}.new balance: ${self.balance}")
+  #----TESTING THE WALLET----
+  if__name__== "__main__":
+     my_wallet = Ewallet("forchu shalom")
+     my_wallet.check_balance()
+     my_wallet.deposit(50)  
