@@ -15,3 +15,10 @@
  def deposit(self, amount):
      self.balance += amount
      print(f"Deposited ${amount}.New balance: ${self.balance}")
+
+def solde_total(portefeuille, devise_cible="XAF"):
+    """Retourne la valeur totale du portefeuille dans une seule devise."""
+    total = 0
+    for devise, montant in portefeuille["soldes"].items():
+        total += convert(montant, devise, devise_cible)
+    return round(total, 2)
